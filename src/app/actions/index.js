@@ -1,6 +1,6 @@
 'use server'
 
-import { signIn, signOut } from "@/auth";
+import { signIn , signOut } from "@/auth";
 import { redirect } from "next/dist/server/api-utils";
 
 export async function doSocialSignIn(formData){
@@ -19,12 +19,12 @@ export async function doSignOut(){
 export async function doCredentialSignIn(formData){
     try {
         const response = await signIn('credentials', {
-            email: formData.get('email'),
+            username: formData.get('username'),
             password: formData.get('password'),
-            redirectTo: false,
+            redirect: false,
         });
         return response;
     } catch (error) {
-        throw new Error(error.message);
+        throw new Error(error);
     }
 }

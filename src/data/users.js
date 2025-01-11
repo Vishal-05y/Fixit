@@ -1,21 +1,21 @@
 const users=[
     {
-        email:"abc@email.com",
+        username:"abc",
         password:"123"
     },
 
     {
-        email:"abcd@email.com",
+        username:"abcd@email.com",
         password:"123"
     },
 
     {
-        email:"abcde@email.com",
+        username:"abcde@email.com",
         password:"123"
     }
 ]
 
-export const getUserByEmail = (email) => {
-    return users.find(user => user.email === email);
+export const getUserByUsername = (username) => {
+    return users.find(user => user.username === username);
     return found;
 }

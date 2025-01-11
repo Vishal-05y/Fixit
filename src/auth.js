@@ -1,9 +1,9 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
-import CredentialProvider from "next-auth/providers/credentials";
+import CredentialsProvider from "next-auth/providers/credentials";
 
-import { getUserByEmail } from "./data/users";
+import { getUserByUsername } from "./data/users";
 
 export const { 
     handlers:{GET, POST}, 
@@ -16,11 +16,11 @@ export const {
     },
 
     providers: [
-        CredentialProvider({
+        CredentialsProvider({
             async authorize (credentials) {
                 if(credentials === null) return null;
                 try{
-                    const user = getUserByEmail(credentials?.email);
+                    const user = getUserByUsername(credentials?.username);
                     if(user){
                         const isMatch= user?.password === credentials?.password;
 

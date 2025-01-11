@@ -1,6 +1,6 @@
 import { doSocialSignIn } from '@/app/actions';
 
-const SocialSignInPage = () => {
+const SocialSignIn = () => {
     return (
         <div className="rounded-lg">
         <div className='pt-2'>
@@ -18,4 +18,4 @@ const SocialSignInPage = () => {
         </div>
     );
 }
-export default SocialSignInPage;
+export default SocialSignIn;
