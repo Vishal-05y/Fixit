@@ -1,4 +1,3 @@
-// filepath: /c:/Users/visha/Desktop/Projects/fixit/src/app/signout/page.js
 import { doSignOut } from "../actions/signinaction";
 
 export default function SignOutPage() {

@@ -1,4 +1,3 @@
-// filepath: /c:/Users/visha/Desktop/Projects/fixit/src/app/profileHome/page.js
 'use client'
 
 import { useRouter } from "next/navigation";

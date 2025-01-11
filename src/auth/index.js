@@ -1,5 +1,3 @@
-
-
 import { getSession, signIn as nextAuthSignIn, signOut as nextAuthSignOut } from "next-auth/react";
 
 export async function auth() {
