@@ -3,7 +3,10 @@ import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-import { Customer } from "./model/customer-model";
+// import { Customer } from "./model/customer-model";
+// import { Employee } from "./model/employee-model";
+import { User } from "./model/user-model";
+
 import bcrypt from "bcryptjs";
 
 export const { 
@@ -21,42 +24,23 @@ export const {
             async authorize (credentials) {
                 if(credentials === null) return null;
                 try{
-                    const customer = await Customer.findOne({
+                    const user = await User.findOne({
                         username:credentials.username,
                     });
 
-                    if( customer ){
+                    if( user ){
                         const isMatch= await bcrypt.compare(
                             credentials.password, 
-                            customer.password
+                            user.password
                         );
                         
                         if(isMatch){
-                            return customer;
+                            return user;
                         }
                         else{
                             throw new Error("Invalid password");
                         }
-                        return customer;
-                    }
-
-                    const employee = await Employee.findOne({
-                        username:credentials.username
-                    });
-
-                    if( employee ){
-                        const isMatch= await bcrypt.compare(
-                            credentials.password, 
-                            customer.password
-                        );
-
-                        if(isMatch){
-                            return employee;
-                        }
-                        else{
-                            throw new Error("Invalid password");
-                        }
-                        return employee;
+                        return user;
                     }
                     else{
                         throw new Error("User not found");

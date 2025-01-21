@@ -21,7 +21,6 @@ const ProfileHomePage = async () => {
                 </>
                 ) : (<h1>{session?.user?.name}</h1>)
             }
-            <h1>Pandagow</h1>
             <Logout/>
         </div>
     );

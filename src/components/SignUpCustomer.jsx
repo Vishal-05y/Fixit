@@ -23,7 +23,8 @@ const SignUpCustomer = () => {
             const city=formData.get('city');
             const state=formData.get('state');
 
-            const response = await fetch('/api/signupcustomer', {
+            // const response = await fetch('/api/signupcustomer', {
+            const response = await fetch('/api/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -65,7 +66,7 @@ const SignUpCustomer = () => {
                     </div>
                     <div className="mb-4 text-left">
                         <label htmlFor="phone" className="block text-m font-medium text-gray-700">Phone Number</label>
-                        <input type="text" id="phone" name="phone" placeholder="Enter Phone-Number" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm" />
+                        <input type="tel" id="phone" name="phone" placeholder="Enter Phone-Number" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm" />
                     </div>
                     <div className="mb-4 text-left">
                         <label htmlFor="password" className="block text-m font-medium text-gray-700">Password</label>
