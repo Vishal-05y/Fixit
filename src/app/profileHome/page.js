@@ -10,18 +10,7 @@ const ProfileHomePage = async () => {
     }
     return (
         <div className="mt-20 flex justify-center">
-            {
-                session?.user?.image && session?.user?.name ? (
-                <>
-                    <h1>{session?.user?.name}</h1>
-                    <Image 
-                        src={session?.user?.image} 
-                        alt={session?.user?.name} 
-                        width={50} height={50} />
-                </>
-                ) : (<h1>{session?.user?.name}</h1>)
-            }
-            <Logout/>
+            <h1>Hi</h1>
         </div>
     );
 }
