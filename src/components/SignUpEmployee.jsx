@@ -70,7 +70,7 @@ const SignUpEmployee = () => {
                 const service=formData.get('service');
 
                 // const response = await fetch('/api/signupemployee', {
-                const response = await fetch('/api/user', {
+                const response = await fetch('/api/register', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

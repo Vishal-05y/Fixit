@@ -24,7 +24,7 @@ const SignUpCustomer = () => {
             const state=formData.get('state');
 
             // const response = await fetch('/api/signupcustomer', {
-            const response = await fetch('/api/user', {
+            const response = await fetch('/api/register', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
