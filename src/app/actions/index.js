@@ -8,7 +8,7 @@ export async function doSocialSignIn(formData){
     if (!action) {
         throw new Error('Action is required');
     }
-    await signIn(action, { redirectTo: "/profileHome" });
+    await signIn(action, { redirectTo: "/homeservices" });
     console.log(action);
 }
 

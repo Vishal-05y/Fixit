@@ -12,9 +12,15 @@ const Navbar = async () => {
 
   return (
       <header className="flex justify-between bg-gray-300 text-black p-2">
+        <div className="flex items-center gap-2">
+        <Link href="/">
+            <img src="/engineer.png" alt="logo" className="h-10 w-10"/>
+        </Link>
           <Link href="/">
               <h1 className="text-2xl">FIXIT</h1>
           </Link>
+        </div>
+        <div>
           <nav>
               <ul className="flex pt-1">
                   {loggedInUser ? (
@@ -32,6 +38,7 @@ const Navbar = async () => {
                   )}
               </ul>
           </nav>
+        </div>
       </header>
   );
 }

@@ -19,7 +19,7 @@ const SignIn = () => {
                 setError(response.error.message);
             }
             else{
-                router.push("/profileHome");
+                router.push("/homeservices");
             }
         } catch (error) {
             setError("Check your credentials");

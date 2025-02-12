@@ -8,7 +8,7 @@ export async function createUser(user) {
   }
 }
 
-export async function getUserByEmail(email) {
-  const user = await User.findOne({ email: email }).select("-password").lean();
-  return user;
-}
+// Get user from database by service
+export const getUsersByService = async (serviceName) => {
+  return await User.find({ service: serviceName }).select("-password").lean();
+};
