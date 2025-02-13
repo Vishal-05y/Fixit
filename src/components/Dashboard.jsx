@@ -2,6 +2,7 @@ import { auth } from "@/auth";
 import { getUserByEmail } from "@/queries/users";
 
 const Dashboard = async () => {
+
     const session = await auth();
     const loggedInUser = session?.user;
     
@@ -17,6 +18,20 @@ const Dashboard = async () => {
                 <p>Email: {user.email}</p>
                 <p>Username: {user.username}</p>
                 <p>Phone: {user.phone}</p>
+                {
+                  user.service ? (
+                    <>
+                      <p>Category: {user.category}</p>
+                      <p>Service: {user.service}</p>
+                    </>
+                  ) : (
+                    <>
+                      <p>Street: {user.street}</p>
+                      <p>City: {user.city}</p>
+                      <p>State: {user.state}</p>
+                    </>
+                  )
+                }
               </li>
             ):(
                 <p>Sign in to view workers</p>
