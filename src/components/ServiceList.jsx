@@ -17,15 +17,15 @@ const serviceImages = {
     'ApplianceRepairTechnician': '/engineer.png',
     'Painter': '/engineer.png',
     'PlumbingExpert': '/engineer.png',
-    'Housekeeping Staff': '/engineer.png',
-    'Maid Service': '/engineer.png',
+    'HousekeepingStaff': '/engineer.png',
+    'MaidService': '/engineer.png',
     'Nannies/Babysitter': '/engineer.png',
-    'Gardening Service': '/engineer.png',
-    'Laundry Service': '/engineer.png',
-    'Interior Designer': '/engineer.png',
+    'GardeningService': '/engineer.png',
+    'LaundryService': '/engineer.png',
+    'InteriorDesigner': '/engineer.png',
     'Photographer': '/engineer.png',
-    'Event Planner': '/engineer.png',
-    'Security Guard': '/engineer.png',
+    'EventPlanner': '/engineer.png',
+    'SecurityGuard': '/engineer.png',
     'Driver': '/engineer.png'
 };
 

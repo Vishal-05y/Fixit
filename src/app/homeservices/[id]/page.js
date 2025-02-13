@@ -26,7 +26,6 @@ const ServiceDetailsPage = async ({ params: { id } }) => {
                 <p className="text-lg font-semibold">{worker.username}</p>
                 <p>Email: {worker.email}</p>
                 <p>Phone: {worker.phone}</p>
-                {/* <p>Category: {worker.category}</p> */}
               </li>
             ))}
           </ul>

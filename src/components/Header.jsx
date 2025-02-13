@@ -24,7 +24,10 @@ const Navbar = async () => {
           <nav>
               <ul className="flex pt-1">
                   {loggedInUser ? (
-                    <li className="flex">
+                    <li className="flex gap-4">
+                      <Link href='/profile'>
+                      <img src="/user.png" alt="logo" width={20} height={20} className="h-10 w-10"/>
+                      </Link>
                       <Logout/>
                     </li>
                   ) : (
