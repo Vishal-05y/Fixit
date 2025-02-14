@@ -12,6 +12,7 @@ const BookingPage = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(true);
+    const [successMessage, setSuccessMessage] = useState(""); // ✅ New success message state
     const router = useRouter();
 
     useEffect(() => {
@@ -58,7 +59,13 @@ const BookingPage = () => {
                 throw new Error(data.message || "Something went wrong.");
             }
 
-            router.push("/");
+            // ✅ Show success message
+            setSuccessMessage("Your booking has been confirmed! 🎉");
+
+            // ✅ Redirect after 3 seconds
+            setTimeout(() => {
+                router.push("/");
+            }, 3000);
         } catch (error) {
             setError(error.message);
         }
@@ -83,12 +90,15 @@ const BookingPage = () => {
                         <p><span className="font-semibold">Service:</span> {serviceName || "No service selected"}</p> {/* ✅ Show service name */}
 
                         {error && <p className="text-red-500 mt-2">{error}</p>}
+                        {successMessage && <p className="text-green-500 mt-2 font-semibold">{successMessage}</p>} {/* ✅ Show success message */}
 
-                        <form onSubmit={handleSubmit}>
-                            <button type="submit" className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
-                                Confirm booking
-                            </button>
-                        </form>
+                        {!successMessage && (  // ✅ Hide form after successful booking
+                            <form onSubmit={handleSubmit}>
+                                <button type="submit" className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
+                                    Confirm booking
+                                </button>
+                            </form>
+                        )}
                     </div>
                 )
             ) : (

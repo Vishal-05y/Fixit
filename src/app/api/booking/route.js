@@ -4,7 +4,7 @@ import { createBooking } from "@/queries/bookings";
 import { dbConnect } from "@/lib/mongo";
 
 export const POST = async (request) => {
-  const {username, email, phone, password, street, city, state,  service} = await request.json();
+  const {username, email, phone, street, city, state,  service} = await request.json();
   // console.log(username, email, password);
 
   // Create a DB Conenction
@@ -34,6 +34,3 @@ export const POST = async (request) => {
   });
 
  }
-
-
-
