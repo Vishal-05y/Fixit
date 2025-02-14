@@ -21,6 +21,7 @@ const CategoryServicesPage = () => {
                     <Link key={service.name} href={`/homeservices/service/${encodeURIComponent(service.name)}`}>
                     <div className="bg-white shadow-lg rounded-2xl p-4 text-center transform transition duration-300 hover:scale-105 cursor-pointer">
                         <h2 className="text-xl font-semibold text-gray-800">{service.name}</h2>
+                        <p className="text-gray-600">{service.description}</p>
                     </div>
                 </Link>                
                 ))}

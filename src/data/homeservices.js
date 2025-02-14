@@ -1,38 +1,137 @@
-
-
 const serviceCategories = {
   'BeautyAndWellness': [
-      { name: 'Beautician' },
-      { name: 'Barber' },
-      { name: 'MassageTherapist' },
-      { name: 'FitnessTrainer' },
-      { name: 'YogaTrainer' },
-      { name: 'SpaTherapist' }
+      { 
+        name: 'Beautician',
+        description: 'Beautician description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'Barber',
+        description: 'Barber description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'MassageTherapist',
+        description: 'MassageTherapist description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'FitnessTrainer',
+        description: 'FitnessTrainer description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+       },
+      { 
+        name: 'YogaTrainer',
+        description: 'YogaTrainer description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'SpaTherapist',
+        description: 'SpaTherapist description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      }
   ],
   'HomeServices': [
-      { name: 'Carpenter' },
-      { name: 'Electrician' },
-      { name: 'Plumber' },
-      { name: 'ACTechnician' },
-      { name: 'HomeCleaner' },
-      { name: 'PestControlExpert' },
-      { name: 'ApplianceRepairTechnician' },
-      { name: 'Painter' },
-      { name: 'PlumbingExpert' }
+      { 
+        name: 'Carpenter',
+        description: 'Carpenter description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'Electrician',
+        description: 'Electrician description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'Plumber',
+        description: 'Plumber description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'ACTechnician',
+        description: 'ACTechnician description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'HomeCleaner',
+        description: 'HomeCleaner description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'PestControlExpert',
+        description: 'PestControlExpert description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'ApplianceRepairTechnician',
+        description: 'ApplianceRepairTechnician description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'Painter',
+        description: 'Painter description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'PlumbingExpert',
+        description: 'PlumbingExpert description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
   ],
   'DomesticHelp': [
-      { name: 'HousekeepingStaff' },
-      { name: 'MaidService' },
-      { name: 'Nannies/Babysitter' },
-      { name: 'GardeningService' },
-      { name: 'LaundryService' }
+      { 
+        name: 'HousekeepingStaff',
+        description: 'HousekeepingStaff description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'MaidService',
+        description: 'MaidService description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+
+      { 
+        name: 'Nannies/Babysitter',
+        description: 'Nannies/Babysitter description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'GardeningService',
+        description: 'GardeningService description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'LaundryService',
+        description: 'LaundryService description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      }
   ],
   'ProfessionalServices': [
-      { name: 'InteriorDesigner' },
-      { name: 'Photographer' },
-      { name: 'EventPlanner' },
-      { name: 'SecurityGuard' },
-      { name: 'Driver' }
+      { 
+        name: 'InteriorDesigner',
+        description: 'InteriorDesigner description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'Photographer',
+        description: 'Photographer description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'EventPlanner',
+        description: 'EventPlanner description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'SecurityGuard',
+        description: 'SecurityGuard description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      },
+      { 
+        name: 'Driver',
+        description: 'Driver description',
+        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
+      }
   ]
 };
 
@@ -51,3 +150,6 @@ export const getServiceByName = (name) => {
   }
   return null;
 };
+
+// export const getServicesByCategory = (category) => services.filter(service => service.category === category);
+// export const getServiceByName = (name) => services.find(service => service.name === name);
