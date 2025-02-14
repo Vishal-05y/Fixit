@@ -9,38 +9,38 @@ const SignUpEmployee = () => {
     const [error, setError] = useState("");
     
     const serviceCategories = {
-            "Beauty & Wellnes": [
+            "BeautyAndWellness": [
                 "Beautician",
                 "Barber",
-                "Massage Therapist",
-                "Spa Therapist",
-                "Fitness Trainer",
-                "Yoga Trainer"
+                "MassageTherapist",
+                "FitnessTrainer",
+                "YogaTrainer",
+                "SpaTherapist",
             ],
-            "Home Services": [
+            "HomeServices": [
                 "Carpenter",
                 "Electrician",
                 "Plumber",
-                "AC Technician",
-                "Home Cleaner",
-                "Pest Control Expert",
-                "Appliance Repair Technician",
+                "ACTechnician",
+                "HomeCleaner",
+                "PestControlExpert",
+                "ApplianceRepairTechnician",
                 "Painter",
-                "Interior Designer",
-                "Gardening Service"
+                "PlumbingExpert"
             ],
-            "Domestic Help": [
-                "Housekeeping Staff",
-                "Maid Services",
-                "Nannie/Babysitter",
-                "Laundry Service",
-                "Driver"
+            "DomesticHelp": [
+                "HousekeepingStaff",
+                "MaidService",
+                "Nannies/Babysitter",
+                "GardeningService",
+                "LaundryService"
             ],
-            "Professional Services": [
-                "Home Tutor",
+            "ProfessionalServices": [
+                "InteriorDesigner",
                 "Photographer",
-                "Security Guard",
-                "Event Planner"
+                "EventPlanner",
+                "SecurityGuard",
+                "Driver"
             ]
         };
     

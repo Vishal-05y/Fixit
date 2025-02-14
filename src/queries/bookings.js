@@ -9,14 +9,19 @@ export async function createBooking(booking) {
 }
 
 // Get user from database by service
-// export const getUsersByService = async (serviceName) => {
-//   return await User.find({ service: serviceName }).select("-password").lean();
+// export const getBookingsByService = async (serviceName) => {
+//   return await Booking.find({ service: serviceName }).select("-password").lean();
 // };
 
-
-// export async function getUserByEmail(email) {
-//   return await User.findOne({ email }).select("-password").lean();
-// }
+export const getBookingsByEmail = async (email, service = null) => {
+  if (service) {
+      // If user is a worker, fetch bookings where the service matches
+      return await Booking.find({ service });
+  } else {
+      // If user is a customer, fetch bookings they made
+      return await Booking.find({ email });
+  }
+};
 
 // export async function updateUser(userEmail, updatedData) {
 //   return await User.findOneAndUpdate({ email: userEmail }, updatedData, { new: true });

@@ -1,16 +1,51 @@
+// import { NextResponse } from "next/server";
+// import { createBooking } from "@/queries/bookings";
+
+// import { dbConnect } from "@/lib/mongo";
+
+// export const POST = async (request) => {
+//   const {username, email, phone, street, city, state,  service} = await request.json();
+//   // console.log(username, email, password);
+
+//   // Create a DB Conenction
+//   await dbConnect();
+
+//   // Form a DB payload
+//   const newBooking = {
+//     username, 
+//     email, 
+//     phone,
+//     street, 
+//     city, 
+//     state,
+//     service
+//   }
+//   // Update the DB
+//   try {
+//     await createBooking(newBooking);
+//   } catch (err) {
+//     return new NextResponse(err.message, {
+//       status: 500,
+//     });
+//   }
+
+//   return new NextResponse("User has been created", {
+//     status: 201,
+//   });
+
+//  }
+
 import { NextResponse } from "next/server";
 import { createBooking } from "@/queries/bookings";
-
 import { dbConnect } from "@/lib/mongo";
 
 export const POST = async (request) => {
-  const {username, email, phone, street, city, state,  service} = await request.json();
-  // console.log(username, email, password);
+  const { username, email, phone, street, city, state, service, date } = await request.json(); 
 
-  // Create a DB Conenction
+  // ✅ Connect to MongoDB
   await dbConnect();
 
-  // Form a DB payload
+  // ✅ Ensure date is stored correctly
   const newBooking = {
     username, 
     email, 
@@ -18,19 +53,17 @@ export const POST = async (request) => {
     street, 
     city, 
     state,
-    service
-  }
-  // Update the DB
+    service,
+    // date: new Date(), // ✅ Convert to Date format
+  };
+
+  // ✅ Store in MongoDB
   try {
     await createBooking(newBooking);
   } catch (err) {
-    return new NextResponse(err.message, {
-      status: 500,
-    });
+    return new NextResponse(err.message, { status: 500 });
   }
 
-  return new NextResponse("User has been created", {
-    status: 201,
-  });
+  return new NextResponse("Booking has been created", { status: 201 });
+};
 
- }
