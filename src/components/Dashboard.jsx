@@ -54,7 +54,7 @@
 // export default Dashboard;
 
 import { auth } from "@/auth";
-import { getUserByEmail } from "@/queries/users";
+import { getUsersByEmail } from "@/queries/users";
 import { getBookingsByEmail } from "@/queries/bookings";
 
 const Dashboard = async () => {
@@ -65,7 +65,7 @@ const Dashboard = async () => {
         return <p>Sign in to view your dashboard</p>;
     }
 
-    const user = await getUserByEmail(loggedInUser.email);
+    const user = await getUsersByEmail(loggedInUser.email);
     
     // Pass `user.service` for workers, `null` for customers
     const bookings = await getBookingsByEmail(user.email, user.service || null);
@@ -106,6 +106,7 @@ const Dashboard = async () => {
                                 <p><strong>Email:</strong> {booking.email}</p>
                                 <p><strong>Phone:</strong> {booking.phone}</p>
                                 <p><strong>Address:</strong> {booking.street}, {booking.city}, {booking.state}</p>
+                                <p><strong>Booking Date:</strong> {new Date(booking.date).toLocaleDateString()}</p>
                                 {/* <p><strong>Booking Date:</strong> {new Date(booking.date).toLocaleDateString()}</p> */}
                             </li>
                         ))

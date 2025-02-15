@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 import SignIn from "@/components/SignIn";
 import { getServiceByName } from "@/data/homeservices";
-import { getUserByEmail } from "@/queries/users";
+import { getUsersByEmail } from "@/queries/users";
 import Link from "next/link";
 
 const ServiceDetailsPage = async ({ params }) => {
@@ -24,7 +24,7 @@ const ServiceDetailsPage = async ({ params }) => {
 
     let user = null;
     if (loggedInUser?.email) {
-        user = await getUserByEmail(loggedInUser.email);
+        user = await getUsersByEmail(loggedInUser.email);
     }
 
     return (

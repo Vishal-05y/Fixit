@@ -54,7 +54,7 @@ export const POST = async (request) => {
     city, 
     state,
     service,
-    // date: new Date(), // ✅ Convert to Date format
+    date: new Date(date), // ✅ Convert to Date format
   };
 
   // ✅ Store in MongoDB

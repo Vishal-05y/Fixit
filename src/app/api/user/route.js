@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import { getUserByEmail } from "@/queries/users";
+import { getUsersByEmail } from "@/queries/users";
 
 export async function GET(req) {
     const session = await auth();
@@ -8,7 +8,7 @@ export async function GET(req) {
         return Response.json({ error: "Not authenticated" }, { status: 401 });
     }
 
-    const user = await getUserByEmail(session.user.email);
+    const user = await getUsersByEmail(session.user.email);
     if (!user) {
         return Response.json({ error: "User not found" }, { status: 404 });
     }

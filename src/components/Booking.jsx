@@ -213,20 +213,22 @@ const BookingPage = () => {
 
                         {!successMessage && (  // ✅ Hide form after successful booking
                             <form onSubmit={handleSubmit} className="mt-4">
-                                <label htmlFor="date" className="block font-semibold">Select Date:</label>
-                                <input
-                                    type="date"
-                                    id="date"
-                                    value={selectedDate}
-                                    onChange={(e) => setSelectedDate(e.target.value)}
-                                    className="mt-2 border px-2 py-1 rounded w-full"
-                                    required
-                                />
-
-                                <button type="submit" className="mt-4 bg-blue-500 text-white px-4 py-2 rounded w-full">
-                                    Confirm booking
-                                </button>
-                            </form>
+                            <label htmlFor="date" className="block font-semibold">Select Date:</label>
+                            <input
+                                type="date"
+                                id="date"
+                                value={selectedDate}
+                                onChange={(e) => setSelectedDate(e.target.value)}
+                                className="mt-2 border px-2 py-1 rounded w-full"
+                                required
+                                min={new Date().toISOString().split("T")[0]} // ✅ Disable past dates
+                            />
+                            
+                            <button type="submit" className="mt-4 bg-blue-500 text-white px-4 py-2 rounded w-full">
+                                Confirm booking
+                            </button>
+                        </form>
+                        
                         )}
                     </div>
                 )
