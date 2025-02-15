@@ -1,10 +1,10 @@
 import React from 'react'
-import Dashboard from '@/components/Dashboard'
+import DashboardCustomer from '@/components/DashboardCustomer'
 
 const ProfilePage = () => {
   return (
     <>
-      <Dashboard/>
+      <DashboardCustomer/>
     </>
   )
 }

@@ -8,10 +8,6 @@ export async function createBooking(booking) {
   }
 }
 
-// Get user from database by service
-// export const getBookingsByService = async (serviceName) => {
-//   return await Booking.find({ service: serviceName }).select("-password").lean();
-// };
 
 export const getBookingsByEmail = async (email, service = null) => {
   if (service) {
@@ -23,6 +19,3 @@ export const getBookingsByEmail = async (email, service = null) => {
   }
 };
 
-// export async function updateUser(userEmail, updatedData) {
-//   return await User.findOneAndUpdate({ email: userEmail }, updatedData, { new: true });
-// }
