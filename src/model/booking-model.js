@@ -26,7 +26,8 @@ const bookingSchema = new Schema({
   city: { type: String },
   state: { type: String },
   service: { type: String },
-  // date: { type: Date, default: Date.now } // ✅ Add date field
+  date: { type: Date, required: true }, // ✅ Ensure date is required
 });
 
 export const Booking = mongoose.models.Booking || mongoose.model("Booking", bookingSchema);
+
