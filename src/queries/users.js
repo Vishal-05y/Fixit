@@ -8,7 +8,6 @@ export async function createUser(user) {
   }
 }
 
-// Get user from database by service
 export const getUsersByService = async (serviceName) => {
   return await User.find({ service: serviceName }).select("-password").lean();
 };
@@ -18,6 +17,3 @@ export async function getUsersByEmail(email) {
   return await User.findOne({ email }).select("-password").lean();
 }
 
-export async function updateUser(userEmail, updatedData) {
-  return await User.findOneAndUpdate({ email: userEmail }, updatedData, { new: true });
-}
