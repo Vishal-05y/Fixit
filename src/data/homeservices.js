@@ -2,35 +2,6 @@ const serviceCategories = {
   'BeautyAndWellness': [
       { 
         name: 'Beautician',
-<<<<<<< Updated upstream
-        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'Barber',
-        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'MassageTherapist',
-        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'FitnessTrainer',
-        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-       },
-      { 
-        name: 'YogaTrainer',
-        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'SpaTherapist',
-        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-=======
         description: 'Beautician description',
         about:'Enhance your natural beauty with our expert beautician services, designed to make you look and feel your best. Our skilled beauticians offer a range of treatments tailored to your needs, including facials, waxing, eyebrow shaping, eyelash extensions, and professional makeup application. Whether you are preparing for a special occasion or simply indulging in some self-care, our team uses high-quality products and techniques to deliver exceptional results.Book your appointment today and experience personalized beauty treatments in a relaxing environment. Let us help you glow inside and out!',
         image:'/beutician.jpeg'
@@ -65,56 +36,11 @@ const serviceCategories = {
         description: 'SpaTherapist description',
         about:'Indulge in ultimate relaxation with our professional spa therapy services. Our skilled spa therapists offer a range of treatments including facials, body wraps, exfoliating scrubs, and aromatherapy massages, all designed to rejuvenate your skin and soothe your senses. Whether you are looking for a relaxing escape or a skin refresh, our treatments are tailored to leave you feeling revitalized. Book your appointment today and treat yourself to a luxurious spa experience.',
         image:'/spatherapist.jpeg'
->>>>>>> Stashed changes
       }
   ],
   'HomeServices': [
       { 
         name: 'Carpenter',
-<<<<<<< Updated upstream
-        description: 'Skilled in woodworking, furniture making, and repairs.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'Electrician',
-        description: 'Handles electrical installations, repairs, and maintenance.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'Plumber',
-        description: 'Fixes and installs pipes, faucets, and drainage systems.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'ACTechnician',
-        description: 'Repairs and maintains air conditioning systems.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'HomeCleaner',
-        description: 'Provides deep cleaning and sanitation services.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'PestControlExpert',
-        description: 'Eliminates pests and ensures a pest-free environment.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'ApplianceRepairTechnician',
-        description: 'Repairs and services home appliances efficiently.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'Painter',
-        description: 'Provides painting services for homes and offices.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'PlumbingExpert',
-        description: 'Expert in resolving plumbing issues and installations.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-=======
         description: 'Carpenter description',
         about:'Transform your space with the help of our skilled carpenters. From custom furniture and cabinetry to repairs and home improvements, our expert craftsmen provide high-quality woodworking solutions tailored to your needs. Whether you need a new bookshelf, a kitchen makeover, or repairs around the house, we deliver precise, durable results. Book your appointment today and let us bring your woodworking projects to life!',
         image:'/carpenter.jpeg'
@@ -166,21 +92,11 @@ const serviceCategories = {
         description: 'PlumbingExpert description',
         about:'Ensure your plumbing system runs smoothly with our expert plumbing services. From leak repairs and drain cleaning to pipe installations and water heater maintenance, our skilled plumbers provide efficient and reliable solutions. Whether it is a quick fix or a major project, we handle it all with precision and care. Book your appointment today and keep your plumbing in top shape!',
         image:'/plumber.jpeg'
->>>>>>> Stashed changes
       },
   ],
   'DomesticHelp': [
       { 
         name: 'HousekeepingStaff',
-<<<<<<< Updated upstream
-        description: 'Ensures cleanliness and organization in homes.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'MaidService',
-        description: 'Offers daily cleaning, laundry, and home chores.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-=======
         description: 'HousekeepingStaff description',
         about:'Keep your home clean and organized with our professional housekeeping services. Our trained staff provide thorough cleaning, dusting, vacuuming, and organizing to maintain a tidy and comfortable living space. Whether you need regular upkeep or a one-time deep clean, we tailor our services to fit your needs. Book your appointment today and enjoy a spotless, well-kept home!',
         image:'/housekeepingstaff.jpeg'
@@ -190,24 +106,10 @@ const serviceCategories = {
         description: 'MaidService description',
         about:'Make your life easier with our professional maid services. Whether you need regular cleaning, laundry assistance, or help with light housekeeping, our reliable maids provide quality service to keep your home neat and organized. We offer flexible scheduling to fit your needs and ensure your home stays clean and comfortable. Book your appointment today and enjoy a stress-free, tidy home!',
         image:'/maidservice.jpeg'
->>>>>>> Stashed changes
       },
+
       { 
         name: 'Nannies/Babysitter',
-<<<<<<< Updated upstream
-        description: 'Provides childcare and ensures kids’ safety.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'GardeningService',
-        description: 'Maintains gardens, plants, and outdoor spaces.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'LaundryService',
-        description: 'Washes, dries, and irons clothes professionally.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-=======
         description: 'Nannies/Babysitter description',
         about:'Ensure your children are in caring and capable hands with our professional nanny and babysitting services. Whether you need part-time, full-time, or occasional care, our experienced caregivers provide a safe, nurturing environment for your little ones. We offer flexible hours to fit your schedule, ensuring peace of mind while you’re away. Book your appointment today and let us help with your childcare needs!',
         image:'/nanniesbabysitter.jpeg'
@@ -223,43 +125,18 @@ const serviceCategories = {
         description: 'LaundryService description',
         about:'Drowning in laundry? Let us take care of it! Our professional laundry service is designed to make your life easier. From washing and drying to folding and ironing, we handle it all with care. Whether it’s everyday laundry or special items like delicate fabrics, we ensure your clothes come back fresh and spotless. Ready for a hassle-free laundry day? Book your appointment today and enjoy clean clothes without lifting a finger!',
         image:'/laundryservice.jpeg'
->>>>>>> Stashed changes
       }
   ],
   'ProfessionalServices': [
       { 
         name: 'InteriorDesigner',
-<<<<<<< Updated upstream
-        description: 'Creates stylish and functional interior spaces.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-=======
         description: 'InteriorDesigner description',
         about:'Transform your space into a masterpiece with our expert interior design services. Whether you’re renovating a single room or redesigning your entire home, our designers work closely with you to create a stylish, functional, and personalized environment. From selecting the perfect color palette to choosing furniture and decor, we bring your vision to life. Ready to reimagine your space? Book your consultation today and let’s design the home of your dreams!',
         image:'/interiordesigner.jpeg'
->>>>>>> Stashed changes
       },
 
       { 
         name: 'Photographer',
-<<<<<<< Updated upstream
-        description: 'Captures moments with high-quality photography.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'EventPlanner',
-        description: 'Organizes events, weddings, and corporate functions.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'SecurityGuard',
-        description: 'Ensures safety and protection for premises.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-      },
-      { 
-        name: 'Driver',
-        description: 'Provides reliable transportation services.',
-        about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
-=======
         description: 'Photographer description',
         about:'Capture life’s most precious moments with our professional photography services. Whether it’s a family portrait, a wedding, a special event, or product photography, we bring your vision to life through the lens. Our photographers specialize in creating stunning, high-quality images that tell your unique story. Ready to freeze time with beautiful photos? Book your session today and let us help you create memories that last a lifetime!',
         image:'/photographer.jpeg'
@@ -281,11 +158,9 @@ const serviceCategories = {
         description: 'Driver description',
         about:'Need a ride? Our professional driver services are here to get you where you need to go in comfort and style. Whether it’s for a special event, a business trip, or simply daily transportation, our experienced drivers ensure a safe and smooth journey. Sit back, relax, and let us handle the road while you focus on what matters. Book your driver today and travel with ease!',
         image:'/driver.jpeg'
->>>>>>> Stashed changes
       }
   ]
 };
-
 
 export const getAllServiceCategories = () => {
   return Object.keys(serviceCategories);
@@ -303,3 +178,5 @@ export const getServiceByName = (name) => {
   return null;
 };
 
+// export const getServicesByCategory = (category) => services.filter(service => service.category === category);
+// export const getServiceByName = (name) => services.find(service => service.name === name);
