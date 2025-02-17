@@ -54,12 +54,13 @@ const CategoryServicesPage = () => {
                 <h1 className="text-3xl font-bold text-center mb-6 text-gray-900">{category}</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {services.map((service) => (
-                        <Link key={service.name} href={`/homeservices/service/${encodeURIComponent(service.name)}`}>
-                            <div className="bg-gray-50 shadow-md rounded-2xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
-                                <h2 className="text-xl font-semibold text-gray-800">{service.name}</h2>
-                                <p className="text-gray-600">{service.description}</p>
-                            </div>
-                        </Link>
+                       <Link key={service.name} href={`/homeservices/service/${encodeURIComponent(service.name)}`}>
+                       <div className="bg-gray-50 shadow-md rounded-2xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+                           <h2 className="text-xl font-semibold text-gray-800">{service.name}</h2>
+                           <p className="text-gray-600">{service.description}</p>
+                       </div>
+                   </Link>
+                   
                     ))}
                 </div>
             </div>
