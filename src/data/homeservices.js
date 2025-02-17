@@ -2,138 +2,138 @@ const serviceCategories = {
   'BeautyAndWellness': [
       { 
         name: 'Beautician',
-        description: 'Beautician description',
+        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'Barber',
-        description: 'Barber description',
+        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'MassageTherapist',
-        description: 'MassageTherapist description',
+        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'FitnessTrainer',
-        description: 'FitnessTrainer description',
+        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
        },
       { 
         name: 'YogaTrainer',
-        description: 'YogaTrainer description',
+        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'SpaTherapist',
-        description: 'SpaTherapist description',
+        services:'Beautician, Barber, MassageTherapist, FitnessTrainer, YogaTrainer, SpaTherapist',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       }
   ],
   'HomeServices': [
       { 
         name: 'Carpenter',
-        description: 'Carpenter description',
+        description: 'Skilled in woodworking, furniture making, and repairs.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'Electrician',
-        description: 'Electrician description',
+        description: 'Handles electrical installations, repairs, and maintenance.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'Plumber',
-        description: 'Plumber description',
+        description: 'Fixes and installs pipes, faucets, and drainage systems.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'ACTechnician',
-        description: 'ACTechnician description',
+        description: 'Repairs and maintains air conditioning systems.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'HomeCleaner',
-        description: 'HomeCleaner description',
+        description: 'Provides deep cleaning and sanitation services.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'PestControlExpert',
-        description: 'PestControlExpert description',
+        description: 'Eliminates pests and ensures a pest-free environment.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'ApplianceRepairTechnician',
-        description: 'ApplianceRepairTechnician description',
+        description: 'Repairs and services home appliances efficiently.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'Painter',
-        description: 'Painter description',
+        description: 'Provides painting services for homes and offices.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'PlumbingExpert',
-        description: 'PlumbingExpert description',
+        description: 'Expert in resolving plumbing issues and installations.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
   ],
   'DomesticHelp': [
       { 
         name: 'HousekeepingStaff',
-        description: 'HousekeepingStaff description',
+        description: 'Ensures cleanliness and organization in homes.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'MaidService',
-        description: 'MaidService description',
+        description: 'Offers daily cleaning, laundry, and home chores.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
-
       { 
         name: 'Nannies/Babysitter',
-        description: 'Nannies/Babysitter description',
+        description: 'Provides childcare and ensures kids’ safety.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'GardeningService',
-        description: 'GardeningService description',
+        description: 'Maintains gardens, plants, and outdoor spaces.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'LaundryService',
-        description: 'LaundryService description',
+        description: 'Washes, dries, and irons clothes professionally.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       }
   ],
   'ProfessionalServices': [
       { 
         name: 'InteriorDesigner',
-        description: 'InteriorDesigner description',
+        description: 'Creates stylish and functional interior spaces.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'Photographer',
-        description: 'Photographer description',
+        description: 'Captures moments with high-quality photography.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'EventPlanner',
-        description: 'EventPlanner description',
+        description: 'Organizes events, weddings, and corporate functions.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'SecurityGuard',
-        description: 'SecurityGuard description',
+        description: 'Ensures safety and protection for premises.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       },
       { 
         name: 'Driver',
-        description: 'Driver description',
+        description: 'Provides reliable transportation services.',
         about:'lorghuiolkjhtfcvbjiop;lkjhbnml;liuygfvbhiouytfcvbhi',
       }
   ]
 };
+
 
 export const getAllServiceCategories = () => {
   return Object.keys(serviceCategories);
@@ -151,5 +151,3 @@ export const getServiceByName = (name) => {
   return null;
 };
 
-// export const getServicesByCategory = (category) => services.filter(service => service.category === category);
-// export const getServiceByName = (name) => services.find(service => service.name === name);
