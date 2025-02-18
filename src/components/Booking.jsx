@@ -72,7 +72,7 @@ const BookingPage = () => {
         }
     };
 
-    if (loading) return <p className="text-center text-lg text-gray-300">Loading...</p>;
+    if (loading) return <p className="flex flex-col min-h-screen text-gray-300 bg-gray-800 justify-start items-center p-8"></p>;
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-800 p-6">
@@ -85,7 +85,7 @@ const BookingPage = () => {
                         <h1 className="text-2xl font-semibold text-center text-gray-400">{serviceName || "No service selected"}</h1>
                         {error && <p className="text-red-400 mt-2 text-sm text-center">{error}</p>}
                         {successMessage && (
-                            <p className={`mt-2 text-lg text-center ${successMessage.includes("no worker") ? "text-red-400" : "text-green-400"}`}>{successMessage}</p>
+                            <p className={`mt-3 text-lg text-center ${successMessage.includes("no worker") ? "text-red-400" : "text-green-400"}`}>{successMessage}</p>
                         )}
                         {!successMessage && (
                             <form onSubmit={handleSubmit} className="mt-6">
@@ -107,11 +107,9 @@ const BookingPage = () => {
                     </div>
                 )
             ) : (
-                <div className="text-center">
-                    <h1 className="text-3xl font-bold mb-6 text-white">Sign in to book a service</h1>
-                    <div className="bg-gray-700 p-8 rounded-2xl shadow-md">
-                        <SignIn />
-                    </div>
+                <div className="flex-col bg-gray-700 text-gray-300 p-8 rounded-lg shadow-md mb-12">
+                    <h1 className="text-3xl font-bold mb-6 text-center text-gray-300">Sign In</h1>
+                    <SignIn/>
                 </div>
             )}
         </div>

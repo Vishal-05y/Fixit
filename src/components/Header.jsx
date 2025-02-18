@@ -9,7 +9,7 @@ const Navbar = async () => {
 
   if (!loggedInUser) {
     return (
-      <header className="bg-gray-300 text-black py-4 shadow-md">
+      <header className="group relative bg-gray-800 text-gray-300 px-10 py-3 transition-all shadow-xl overflow-hidden">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Link href="/">
@@ -20,10 +20,10 @@ const Navbar = async () => {
             </Link>
           </div>
           <nav>
-            <ul className="flex gap-6 text-lg font-medium">
-              <Link href="/signin" className="hover:text-blue-600">Signin</Link>
-              <Link href="/signup" className="hover:text-blue-600">Signup</Link>
-              <Link href="/contact" className="hover:text-blue-600">Contact</Link>
+            <ul className="flex gap-7 text-xl font-medium">
+              <Link href="/signin">SignIn</Link>
+              <Link href="/signup">SignUp</Link>
+              <Link href="/contact">Contact</Link>
             </ul>
           </nav>
         </div>
@@ -35,7 +35,7 @@ const Navbar = async () => {
   const profileLink = user?.service ? "/profile_em" : "/profile_cu";
 
   return (
-    <header className="bg-gray-300 text-black py-4 shadow-md">
+    <header className="group relative bg-gray-800 text-gray-300 px-10 py-3 transition-all shadow-xl overflow-hidden">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-3">
           <Link href="/">
@@ -45,14 +45,14 @@ const Navbar = async () => {
             <h1 className="text-3xl font-bold">FIXIT</h1>
           </Link>
         </div>
-        <nav>
-          <ul className="flex items-center gap-6">
+        <div >
+          <ul className="flex items-center gap-5 text-lg font-medium">
             <Link href={profileLink} className="hover:opacity-80">
-              <img src="/user.png" alt="Profile" className="h-12 w-12 rounded-full border-2 border-gray-400" />
+              <img src="/user.png" alt="Profile" className="h-10 w-10 rounded-full border-2 border-gray-400 bg-gray-700" />
             </Link>
             <Logout />
           </ul>
-        </nav>
+        </div>
       </div>
     </header>
   );
