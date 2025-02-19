@@ -29,16 +29,16 @@ const SignIn = () => {
   return (
     <>
         <form id="signup-form" onSubmit={handleFormSubmit} className="space-y-4">
-            <div className="mb-4">
-                <label htmlFor="usename" className="block text-m font-medium text-gray-700">Username</label>
-                <input type="username" id="username" name="username" required placeholder="Enter Usename" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+            <div className="mb-4 bg-gray-700">
+                <label htmlFor="usename" className="text-lg font-medium text-gray-300">Username</label>
+                <input type="username" id="username" name="username" required placeholder="Enter Username" className="mt-1 w-full px-3 py-2 border text-gray-200 border-gray-500 bg-gray-700 rounded-md shadow-sm focus:outline-slate-600 " />
             </div>
             <div className="mb-6">
-                <label htmlFor="password" className="block text-m font-medium text-gray-700">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Enter Password" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                <label htmlFor="password" className="text-lg font-medium text-gray-300">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter Password" className="mb-5 mt-1 w-full px-3 py-2 border text-gray-200 border-gray-500 bg-gray-700 rounded-md shadow-sm focus:outline-slate-600" />
             </div>
             <div className="text-red-500 text-center">{error}</div>
-            <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded-md text-lg">Sign In</button>
+            <button type="submit" className="w-full bg-gray-500 text-white py-2 px-4 rounded-md text-xl">SignIn</button>
         </form>
     </>
   )

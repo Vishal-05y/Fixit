@@ -23,9 +23,8 @@ const ServiceDetailsPage = async ({ params }) => {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-4 animate-fadeIn">
-            <div className="w-full max-w-2xl bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-500 
-                          hover:scale-[1.02] animate-slideUp">
+        <div className="flex justify-center items-center dark:bg-gray-800 min-h-screen bg-gradient-to-b p-4">
+            <div className="w-full max-w-2xl text-gray-300 dark:bg-gray-700 rounded-xl overflow-hidden">
                 {/* Header Section */}
                 <div className="relative group">
                     {service.image && (
@@ -40,7 +39,7 @@ const ServiceDetailsPage = async ({ params }) => {
                             />
                             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                                 <div className="overflow-hidden">
-                                    <h1 className="text-4xl font-bold text-center text-white drop-shadow-lg
+                                    <h1 className="text-4xl font-bold text-center text-gray-300 drop-shadow-lg
                                                 transform transition-all duration-500 
                                                 group-hover:scale-110 group-hover:tracking-wider animate-slideRight">
                                         {service.name}
@@ -63,24 +62,22 @@ const ServiceDetailsPage = async ({ params }) => {
 
                 {/* Content Section */}
                 <div className="p-6 transform transition-all duration-500 group-hover:translate-y-2">
-                    <div className="bg-gray-50 p-5 rounded-xl border border-gray-200 shadow-inner
-                                  transform transition-all duration-300 hover:shadow-lg hover:bg-gray-100">
-                        <p className="text-gray-700 leading-relaxed text-base transform transition-all duration-300 
-                                    hover:scale-[1.01]">{service.about}</p>
+                    <div className="text-gray-100 p-5 rounded-xl">
+                        <p className="text-gray-300 leading-relaxed text-base">{service.about}</p>
                     </div>
 
                     {/* Features or Highlights Section */}
-                    <div className="mt-6 grid grid-cols-2 gap-3">
-                        <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 transform transition-all duration-300 
-                                      hover:bg-slate-100 hover:scale-105 hover:shadow-md group/feature">
-                            <span className="text-slate-600 font-semibold flex items-center gap-2 text-sm">
+                    <div className="p-5 grid grid-cols-2 gap-3">
+                        <div className="bg-gray-500 p-3 rounded-lg transform transition-all duration-300 
+                                     hover:scale-105 hover:shadow-md group/feature hover:cursor-pointer">
+                            <span className="text-gray-300 font-semibold flex items-center gap-2 text-sm">
                                 <span className="transform transition-all duration-300 group-hover/feature:rotate-12">✨</span>
                                 Premium Service
                             </span>
                         </div>
-                        <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 transform transition-all duration-300 
-                                      hover:bg-slate-100 hover:scale-105 hover:shadow-md group/feature">
-                            <span className="text-slate-600 font-semibold flex items-center gap-2 text-sm">
+                        <div className="bg-gray-500 p-3 rounded-lg transform transition-all duration-300 
+                                     hover:scale-105 hover:shadow-md group/feature hover:cursor-pointer">
+                            <span className="text-gray-300 font-semibold flex items-center gap-2 text-sm">
                                 <span className="transform transition-all duration-300 group-hover/feature:rotate-12">⚡</span>
                                 Fast Response
                             </span>
@@ -91,17 +88,13 @@ const ServiceDetailsPage = async ({ params }) => {
                     <div className="mt-6 flex justify-center">
                         <Link 
                             href={`/booking?service=${encodeURIComponent(service.name)}`}
-                            className="group relative bg-slate-600 text-white px-8 py-3 rounded-lg
-                                     hover:bg-slate-700 transition-all duration-500 shadow-lg 
+                            className="group relative bg-gray-500 text-gray-300 px-8 py-3 rounded-lg
+                                transition-all duration-500 shadow-lg 
                                      hover:shadow-xl transform hover:-translate-y-1 overflow-hidden"
                         >
-                            <span className="relative z-10 font-semibold text-base group-hover:tracking-wider transition-all duration-300">
+                            <span className="relative z-10 font-semibold text-base ">
                                 Book Service
                             </span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-slate-600 to-slate-700 
-                                          rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500"/>
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300
-                                          bg-[radial-gradient(circle,_white_10%,_transparent_50%)]"/>
                         </Link>
                     </div>
                 </div>
