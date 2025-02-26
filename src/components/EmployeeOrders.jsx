@@ -1,7 +1,6 @@
 import { auth } from "@/auth";
-import Link from "next/link";
 import { getUsersByEmail } from "@/queries/users";
-import { getBookingsByEmail } from "@/queries/bookings";
+import { getAcceptedBookingsByEmail } from "@/queries/accepted-bookings";
 import { CalendarIcon, MapPinIcon, PhoneIcon, MailIcon, UserIcon, BriefcaseIcon, TagIcon } from "lucide-react";
 
 const EmployeeOrders = async () => {
@@ -47,7 +46,7 @@ const EmployeeOrders = async () => {
     }
 
     // Get bookings for this worker's service
-    const bookings = await getBookingsByEmail(null, user.service);
+    const bookings = await getAcceptedBookingsByEmail(loggedInUser.email, user.service);
 
     return (
         <div className="min-h-screen custom-bg_text py-12 px-4 sm:px-6">
@@ -73,27 +72,27 @@ const EmployeeOrders = async () => {
                                             <div key={index} className="bg-gray-700 hover:bg-gray-650 border-l-4 border-gray-400 rounded-lg shadow-md transition-all duration-200 overflow-hidden">
                                                 <div className="p-5">
                                                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-4">
-                                                        <h3 className="text-lg font-medium text-white">{booking.username}</h3>
+                                                        <h3 className="text-lg font-medium text-white">{booking.customerUsername}</h3> {/* ✅ Updated */}
                                                         <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">
                                                             {new Date(booking.date).toLocaleDateString()}
                                                         </span>
                                                     </div>
-                                                    
+
                                                     <div className="flex flex-col gap-3 text-base text-gray-300">
                                                         <div className="flex items-center gap-2">
                                                             <MailIcon className="w-4 h-4 text-blue-400" />
-                                                            <span>{booking.email}</span>
+                                                            <span>{booking.customerEmail}</span> {/* ✅ Updated */}
                                                         </div>
                                                         <div className="flex items-center gap-2">
                                                             <PhoneIcon className="w-4 h-4 text-blue-400" />
-                                                            <span>{booking.phone}</span>
+                                                            <span>{booking.customerPhone}</span> {/* ✅ Updated */}
                                                         </div>
                                                         <div className="flex items-start gap-2 col-span-1 sm:col-span-2">
                                                             <MapPinIcon className="w-4 h-4 text-blue-400 mt-0.5" />
                                                             <span>{booking.street}, {booking.city}, {booking.state}</span>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div className="mt-4 flex justify-between items-center">
                                                         <div className="flex items-center gap-2">
                                                             <span className="w-2 h-2 bg-green-600 rounded-full"></span>
@@ -103,6 +102,7 @@ const EmployeeOrders = async () => {
                                                 </div>
                                             </div>
                                         ))}
+
                                     </div>
                                 ) : (
                                     <div className="flex flex-col items-center justify-center py-12 text-center">

@@ -14,7 +14,7 @@ export const POST = async (request) => {
     const workers = await getUsersByService(service);
     if (workers.length === 0) {
       return NextResponse.json({ message: "No worker available for this service." }, { status: 400 });
-    }
+    } 
 
     // ✅ Ensure date is stored correctly
     const newBooking = {
