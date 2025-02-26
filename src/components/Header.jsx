@@ -122,7 +122,7 @@ const Navbar = async () => {
   const profileLink = user?.service ? "/profile_em" : "/profile_cu";
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-800 text-gray-300 px-6 md:px-10 py-4 shadow-lg border-b border-gray-700">
+    <header className="sticky top-0 z-50 custom-bg_text px-6 md:px-10 py-4 shadow-lg border-b border-gray-700">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-3 transition-transform hover:scale-105">
           <Link href="/" className="flex items-center gap-3">

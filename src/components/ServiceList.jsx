@@ -92,9 +92,9 @@ const ServiceList = () => {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900 p-4">
+        <div className="flex justify-center items-center min-h-screen custom-bg_text p-4">
             <motion.div 
-                className="bg-white dark:bg-gray-800 p-6 w-full max-w-5xl rounded-xl shadow-lg"
+                className="custom-bg_text p-6 w-full max-w-5xl"
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}

@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import Link from "next/link";
 import { getUsersByEmail } from "@/queries/users";
 import { getBookingsByEmail } from "@/queries/bookings";
 import { CalendarIcon, MapPinIcon, PhoneIcon, MailIcon, UserIcon, BriefcaseIcon, TagIcon } from "lucide-react";
@@ -49,11 +50,11 @@ const DashboardEmployee = async () => {
     const bookings = await getBookingsByEmail(null, user.service);
 
     return (
-        <div className="min-h-screen bg-gray-800 text-gray-200 py-12 px-4 sm:px-6">
+        <div className="min-h-screen custom-bg_text py-12 px-4 sm:px-6">
             <div className="max-w-5xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
                     <h1 className="text-3xl font-bold text-white mb-4 md:mb-0">Employee Dashboard</h1>
-                    <div className="bg-gray-700 px-4 py-2 rounded-lg text-white">
+                    <div className="bg-blue-500 px-4 py-2 rounded-lg text-white">
                         <span>Welcome back, {user.username}</span>
                     </div>
                 </div>
@@ -108,7 +109,7 @@ const DashboardEmployee = async () => {
                                     </li>
                                 </ul>
                                 
-                                <button className="w-full py-2 mt-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors">
+                                <button className="w-full py-2 mt-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors">
                                     Update Profile
                                 </button>
                             </div>
@@ -121,7 +122,7 @@ const DashboardEmployee = async () => {
                             <div className="bg-gray-700 px-6 py-4 flex justify-between items-center">
                                 <h2 className="text-xl font-semibold text-white flex items-center gap-2">
                                     <CalendarIcon className="w-5 h-5" />
-                                    Customer Orders
+                                    Available Orders
                                 </h2>
                                 <div className="bg-gray-500 text-slate-100 px-3 py-1 rounded-md text-sm font-medium">
                                     {bookings.length} Orders
@@ -195,18 +196,22 @@ const DashboardEmployee = async () => {
                     </div>
                     <div className="p-6">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {["Set Availability", "View History", "Update Service", "Contact Support"].map((action, index) => (
-                                <button 
-                                    key={index}
-                                    className="flex flex-col items-center justify-center bg-gray-700 hover:bg-gray-650 p-4 rounded-lg transition-colors"
-                                >
-                                    <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mb-3">
-                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                                        </svg>
+                            {[
+                                { label: "My Orders", link: "/profile_em/my_orders" },
+                                { label: "Create One", link: "/profile_em/def" },
+                                { label: "Create One", link: "/profile_em/ghi" },
+                                { label: "Create One", link: "/profile_em/jkl" },
+                            ].map((action, index) => (
+                                <Link key={index} href={action.link} className="group">
+                                    <div className="flex flex-col items-center justify-center bg-gray-700 hover:bg-gray-600 p-6 rounded-lg shadow-md transition-all duration-200 cursor-pointer border border-gray-600">
+                                        <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-3 shadow-lg transition-transform group-hover:scale-105">
+                                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <span className="text-sm text-gray-300">{action.label}</span>
                                     </div>
-                                    <span className="text-sm text-center text-gray-300">{action}</span>
-                                </button>
+                                </Link>
                             ))}
                         </div>
                     </div>

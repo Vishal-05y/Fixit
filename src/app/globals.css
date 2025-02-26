@@ -17,3 +17,7 @@ background: #4B5563; /* Indigo */
 border-radius: 10px;
 }
 
+.custom-bg_text{
+    background: #1F2937;
+    color: #D1D5DB;
+}

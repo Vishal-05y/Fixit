@@ -9,7 +9,7 @@ const DashboardCustomer = async () => {
 
     if (!loggedInUser) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-gray-900">
+            <div className="flex items-center justify-center min-h-screen custom-bg_text">
                 <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-center">
                     <div className="mb-4 text-red-400">
                         <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
