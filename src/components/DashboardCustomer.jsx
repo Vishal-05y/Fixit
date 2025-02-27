@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import Link from "next/link";
 import { getUsersByEmail } from "@/queries/users";
 import { getBookingsByEmail } from "@/queries/bookings";
 import { CalendarIcon, MapPinIcon, PhoneIcon, MailIcon, UserIcon } from "lucide-react";
@@ -17,7 +18,7 @@ const DashboardCustomer = async () => {
                         </svg>
                     </div>
                     <p className="text-red-400 text-xl font-semibold">Sign in to view your dashboard</p>
-                    <button className="mt-6 px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">
+                    <button className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
                         Sign In
                     </button>
                 </div>
@@ -31,13 +32,6 @@ const DashboardCustomer = async () => {
     return (
         <div className="min-h-screen bg-gray-800 text-gray-200 py-12 px-4 sm:px-6">
             <div className="max-w-5xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
-                    <h1 className="text-3xl font-bold text-white mb-4 md:mb-0">Customer Dashboard</h1>
-                    <div className="bg-gray-700 px-4 py-2 rounded-lg text-white">
-                        <span>Welcome back, {user.username}</span>
-                    </div>
-                </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Profile Section */}
                     <div className="col-span-1">
@@ -50,8 +44,8 @@ const DashboardCustomer = async () => {
                             </div>
                             <div className="p-6 space-y-6">
                                 <div className="flex flex-col items-center pb-6 border-b border-gray-700">
-                                    <div className="w-24 h-24 bg-gray-700 rounded-full mb-4 flex items-center justify-center text-3xl font-bold text-indigo-400">
-                                        {user.username.charAt(0).toUpperCase()}
+                                    <div className="w-24 h-24 bg-gray-700 rounded-full mb-4 flex items-center justify-center text-3xl font-bold text-blue-500">
+                                        <UserIcon className="w-11 h-11" />
                                     </div>
                                     <h3 className="text-xl font-semibold text-white">{user.username}</h3>
                                     <p className="text-gray-400">Customer</p>
@@ -59,21 +53,21 @@ const DashboardCustomer = async () => {
 
                                 <ul className="space-y-4 text-gray-300">
                                     <li className="flex items-center gap-3">
-                                        <MailIcon className="w-5 h-5 text-indigo-400" />
+                                        <MailIcon className="w-5 h-5 text-blue-500" />
                                         <div>
                                             <p className="text-sm text-gray-500">Email</p>
                                             <p>{user.email}</p>
                                         </div>
                                     </li>
                                     <li className="flex items-center gap-3">
-                                        <PhoneIcon className="w-5 h-5 text-indigo-400" />
+                                        <PhoneIcon className="w-5 h-5 text-blue-500" />
                                         <div>
                                             <p className="text-sm text-gray-500">Phone</p>
                                             <p>{user.phone}</p>
                                         </div>
                                     </li>
                                     <li className="flex items-center gap-3">
-                                        <MapPinIcon className="w-5 h-5 text-indigo-400" />
+                                        <MapPinIcon className="w-5 h-5 text-blue-500" />
                                         <div>
                                             <p className="text-sm text-gray-500">Address</p>
                                             <p>{user.street}, {user.city}, {user.state}</p>
@@ -81,9 +75,9 @@ const DashboardCustomer = async () => {
                                     </li>
                                 </ul>
                                 
-                                <button className="w-full py-2 mt-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors">
+                                {/* <button className="w-full py-2 mt-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors">
                                     Update Profile
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>
@@ -94,15 +88,15 @@ const DashboardCustomer = async () => {
                             <div className="bg-gray-700 px-6 py-4 flex justify-between items-center">
                                 <h2 className="text-xl font-semibold text-white flex items-center gap-2">
                                     <CalendarIcon className="w-5 h-5" />
-                                    Your Bookings
+                                        Bookings
                                 </h2>
-                                <div className="bg-gray-500 text-slate-100 px-3 py-1 rounded-md text-sm font-medium">
+                                <div className="bg-blue-500 text-slate-100 px-3 py-1 rounded-md text-sm font-medium">
                                     {bookings.length} Bookings
                                 </div> 
                             </div>
                             
                             {/* Scrollable Booking List */}
-                            <div className="p-6 max-h-[490px] overflow-y-auto custom-scrollbar">
+                            <div className="p-6 max-h-[426px] overflow-y-auto custom-scrollbar">
                                 {bookings.length > 0 ? (
                                     <div className="space-y-4">
                                         {bookings.map((booking, index) => (
@@ -110,18 +104,15 @@ const DashboardCustomer = async () => {
                                                 <div className="p-5">
                                                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
                                                         <h3 className="text-lg font-medium text-gray-300">{booking.service}</h3>
-                                                        <span className="px-3 py-1 bg-gray-500 text-white text-sm rounded-full">
+                                                        <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">
                                                             {new Date(booking.date).toLocaleDateString()}
                                                         </span>
                                                     </div>
                                                     <div className="mt-4 flex justify-between items-center">
                                                         <div className="flex items-center gap-2">
-                                                            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                                                            <span className="text-sm text-gray-400">Confirmed</span>
+                                                            <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                                                            <span className="text-sm text-gray-400">Pending</span>
                                                         </div>
-                                                        <button className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">
-                                                            View Details
-                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -142,28 +133,32 @@ const DashboardCustomer = async () => {
                 </div>
 
                 {/* Quick Actions Section */}
-                <div className="mt-8 bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-700">
-                <div className="px-6 py-4 bg-gray-700">
-                        <h2 className="text-xl font-semibold text-white">Quick Actions</h2>
-                    </div>
-                    <div className="p-6">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {["Book a Service", "View History", "Contact Support", "Account Settings"].map((action, index) => (
-                                <button 
-                                    key={index}
-                                    className="flex flex-col items-center justify-center bg-gray-700 hover:bg-gray-650 p-4 rounded-lg transition-colors"
-                                >
-                                    <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mb-3">
-                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                                        </svg>
+                <div className="mt-8 col-span-1 md:col-span-3 bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden w-full">
+                        <div className="px-6 py-4 bg-gray-700 border-b border-gray-600">
+                            <h2 className="text-xl font-semibold text-white">Quick Actions</h2>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
+                            {[
+                                { label: "My Bookings", link: "/profile_cu/my-bookings" },
+                                { label: "Create One", link: "/profile_cu/def" },
+                                { label: "Create One", link: "/profile_cu/ghi" },
+                                { label: "Create One", link: "/profile_cu/jkl" },
+                            ].map((action, index) => (
+                                <Link key={index} href={action.link} className="group">
+                                    <div className="flex flex-col items-center justify-center bg-gray-700 hover:bg-gray-600 p-4 rounded-lg shadow-md border border-gray-600">
+                                        <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                                            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <span className="mt-3 text-lg font-medium text-gray-300 group-hover:text-white transition-colors">
+                                            {action.label}
+                                        </span>
                                     </div>
-                                    <span className="text-sm text-center text-gray-300">{action}</span>
-                                </button>
+                                </Link>
                             ))}
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     );

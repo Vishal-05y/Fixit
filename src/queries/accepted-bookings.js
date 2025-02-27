@@ -9,13 +9,16 @@ export async function createAcceptedBooking(acceptedBooking) {
 }
 
 
-export const getAcceptedBookingsByEmail = async (email, service) => {
+export const getAcceptedBookingsByEmail = async (email) => {
   try {
-      const bookings = await AcceptedBooking.find({ employeeEmail: email, service }).lean();
-      return bookings;
+    const bookings = await AcceptedBooking.find({
+      $or: [{ employeeEmail: email }, { customerEmail: email }],
+    }).lean();
+    return bookings;
   } catch (error) {
-      console.error("Error fetching accepted bookings:", error);
-      return [];
+    console.error("Error fetching accepted bookings:", error);
+    return [];
   }
 };
+
 

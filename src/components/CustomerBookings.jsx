@@ -3,7 +3,7 @@ import { getUsersByEmail } from "@/queries/users";
 import { getAcceptedBookingsByEmail } from "@/queries/accepted-bookings";
 import { CalendarIcon, MapPinIcon, PhoneIcon, MailIcon, UserIcon, BriefcaseIcon, TagIcon } from "lucide-react";
 
-const EmployeeOrders = async () => {
+const CustomerBookings = async () => {
     const session = await auth();
     const loggedInUser = session?.user;
 
@@ -26,27 +26,9 @@ const EmployeeOrders = async () => {
     }
 
     const user = await getUsersByEmail(loggedInUser.email);
-    
-    if (!user.service) {
-        return (
-            <div className="flex items-center justify-center min-h-screen bg-gray-900">
-                <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-center">
-                    <div className="mb-4 text-yellow-400">
-                        <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                        </svg>
-                    </div>
-                    <p className="text-yellow-400 text-xl font-semibold">You are not registered as a worker.</p>
-                    <button className="mt-6 px-6 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors">
-                        Register as Worker
-                    </button>
-                </div>
-            </div>
-        );
-    }
 
     // Get bookings for this worker's service
-    const bookings = await getAcceptedBookingsByEmail(loggedInUser.email, user.service);
+    const bookings = await getAcceptedBookingsByEmail(loggedInUser.email);
 
     return (
         <div className="min-h-screen custom-bg_text py-12 px-4 sm:px-6">
@@ -58,10 +40,10 @@ const EmployeeOrders = async () => {
                             <div className="bg-gray-700 px-6 py-4 flex justify-between items-center">
                                 <h2 className="text-xl font-semibold text-white flex items-center gap-2">
                                     <CalendarIcon className="w-5 h-5" />
-                                    My Orders
+                                        My Bookings
                                 </h2>
                                 <div className="bg-blue-500 text-slate-100 px-3 py-1 rounded-md text-sm font-medium">
-                                    {bookings.length} {bookings.length === 1 ? "Order" : "Orders"}
+                                    {bookings.length} {bookings.length === 1 ? "Booking" : "Bookings"}
                                 </div>
                             </div>
                             
@@ -71,11 +53,11 @@ const EmployeeOrders = async () => {
                                         {bookings.map((booking, index) => (
                                             <div key={index} className="bg-gray-700 hover:bg-gray-650 border-l-4 border-gray-400 rounded-lg shadow-md transition-all duration-200 overflow-hidden">
                                                 <div className="p-5">
-                                                <h3 className="text-xl font-medium text-white pb-5">Customer details</h3> {/* ✅ Updated */}
+                                                    <h3 className="text-xl font-medium text-white pb-5">Employee details</h3> {/* ✅ Updated */}
                                                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-4">
                                                         <div className="flex items-center gap-2">
                                                             <UserIcon className="w-5 h-5 text-blue-400" />
-                                                            <span className="text-lg font-medium">{booking.customerUsername}</span> {/* ✅ Updated */}
+                                                            <span className="text-lg font-medium">{booking.employeeUsername}</span> {/* ✅ Updated */}
                                                         </div>
                                                         <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">
                                                             {new Date(booking.date).toLocaleDateString()}
@@ -84,15 +66,15 @@ const EmployeeOrders = async () => {
                                                     <div className="flex flex-col gap-3 text-base text-gray-300">
                                                         <div className="flex items-center gap-2">
                                                             <MailIcon className="w-4 h-4 text-blue-400" />
-                                                            <span>{booking.customerEmail}</span> {/* ✅ Updated */}
+                                                            <span>{booking.employeeEmail}</span> {/* ✅ Updated */}
                                                         </div>
                                                         <div className="flex items-center gap-2">
                                                             <PhoneIcon className="w-4 h-4 text-blue-400" />
-                                                            <span>{booking.customerPhone}</span> {/* ✅ Updated */}
+                                                            <span>{booking.employeePhone}</span> {/* ✅ Updated */}
                                                         </div>
-                                                        <div className="flex items-start gap-2 col-span-1 sm:col-span-2">
-                                                            <MapPinIcon className="w-4 h-4 text-blue-400 mt-0.5" />
-                                                            <span>{booking.street}, {booking.city}, {booking.state}</span>
+                                                        <div className="flex items-center gap-2">
+                                                            <TagIcon className="w-4 h-4 text-blue-400" />
+                                                            <span>{booking.service}</span> {/* ✅ Updated */}
                                                         </div>
                                                     </div>
 
@@ -122,8 +104,8 @@ const EmployeeOrders = async () => {
                                         <div className="w-20 h-20 mb-6 rounded-full bg-gray-700 flex items-center justify-center">
                                             <CalendarIcon className="w-10 h-10 text-gray-500" />
                                         </div>
-                                        <h3 className="text-xl font-medium text-gray-300 mb-2">No accepted Orders Yet</h3>
-                                        <p className="text-gray-500 mb-6 max-w-md">You didn't accepted any customer orders yet. When you accept the order, details will appear here.</p>
+                                        <h3 className="text-xl font-medium text-gray-300 mb-2">No accepted Bookings Yet</h3>
+                                        <p className="text-gray-500 mb-6 max-w-md">You don't have any accepted bookings yet. When employee accepts your service, their details will appear here.</p>
                                     </div>
                                 )}
                             </div>
@@ -135,4 +117,4 @@ const EmployeeOrders = async () => {
     );
 };
 
-export default EmployeeOrders;
+export default CustomerBookings;

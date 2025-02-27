@@ -200,7 +200,7 @@ const DashboardEmployee = ({ user, bookings: initialBookings }) => {
                                         ))}
                                     </div>
                                 ) : (
-                                    <p className="text-gray-500 text-center">No Orders</p>
+                                    <p className="text-2xl text-gray-500 text-center">No Orders</p>
                                 )}
                             </div>
                         </div>
