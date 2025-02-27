@@ -107,7 +107,7 @@ const serviceCategories = {
       image:'/maidservice.jpeg'
     },
     { 
-      name: 'Nannies/Babysitter',
+      name: 'Babysitter',
       description: 'Provides childcare and ensures kids’ safety',
       about:'Ensure your children are in caring and capable hands with our professional nanny and babysitting services. Whether you need part-time, full-time, or occasional care, our experienced caregivers provide a safe, nurturing environment for your little ones. We offer flexible hours to fit your schedule, ensuring peace of mind while you’re away. Book your appointment today and let us help with your childcare needs!',
       image:'/nanniesbabysitter.jpeg'

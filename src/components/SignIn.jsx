@@ -34,7 +34,7 @@ const SignIn = () => {
     };
 
     return (
-        <div className="max-w-md mx-auto p-6 bg-gray-800 rounded-lg shadow-lg">
+        <div className="max-w-md mx-auto">
             
             <form id="signup-form" onSubmit={handleFormSubmit} className="space-y-6">
                 <div className="relative">
@@ -51,7 +51,7 @@ const SignIn = () => {
                             name="username" 
                             required 
                             placeholder="Enter Username" 
-                            className="w-full pl-10 pr-3 py-2 border border-gray-600 bg-gray-700 rounded-md shadow-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all" 
+                            className="w-full pl-10 pr-3 py-2 border border-gray-600 bg-gray-700 rounded-md shadow-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-400 focus:border-blue-400 transition-all" 
                         />
                     </div>
                 </div>
@@ -70,7 +70,7 @@ const SignIn = () => {
                             name="password" 
                             required 
                             placeholder="Enter Password" 
-                            className="w-full pl-10 pr-10 py-2 border border-gray-600 bg-gray-700 rounded-md shadow-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all" 
+                            className="w-full pl-10 pr-10 py-2 border border-gray-600 bg-gray-700 rounded-md shadow-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-400 focus:border-blue-400 transition-all" 
                         />
                         <div 
                             className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer" 
@@ -93,7 +93,7 @@ const SignIn = () => {
                 
                 <button 
                     type="submit" 
-                    className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-lg font-medium transition-colors duration-300"
+                    className="w-full flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md text-lg font-medium transition-colors duration-300"
                 >
                     <LogIn size={20} />
                     <span>Sign In</span>
@@ -106,7 +106,7 @@ const SignIn = () => {
                 </div>
             </form>
             
-            <div className="mt-6">
+            {/* <div className="mt-6">
                 <div className="relative">
                     <div className="absolute inset-0 flex items-center">
                         <div className="w-full border-t border-gray-600"></div>
@@ -119,7 +119,7 @@ const SignIn = () => {
                 <div className="mt-6">
                     <SocialSignIn />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

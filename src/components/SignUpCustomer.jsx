@@ -243,6 +243,8 @@
 
 'use client'
 
+import { UserIcon } from "lucide-react";
+import { MapPinIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -323,12 +325,12 @@ const SignUpCustomer = () => {
                 
                 <form id="signupForm" onSubmit={handleSubmit} className="space-y-6">
                     <div className="bg-gray-750 p-5 rounded-md mb-6">
-                        <h2 className="text-xl font-semibold mb-4 text-gray-300 flex items-center">
-                            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                            </svg>
-                            Customer Information
-                        </h2>
+                        <div className="mb-6 text-center">
+                            <div className="mb-4 flex items-center justify-center text-3xl font-bold text-blue-500">
+                                <UserIcon className="w-11 h-11" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-white">Customer Information</h3>
+                        </div>
                         
                         <div className="space-y-4">
                             <div className="relative text-left">
@@ -341,7 +343,7 @@ const SignUpCustomer = () => {
                                     name="username" 
                                     placeholder="Enter Username" 
                                     required 
-                                    className={`mt-1 w-full px-4 py-3 border ${focusedField === 'username' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-200`} 
+                                    className={`mt-1 w-full px-4 py-3 border ${focusedField === 'username' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all duration-200`} 
                                     onFocus={() => handleFocus('username')}
                                     onBlur={handleBlur}
                                 />
@@ -357,7 +359,7 @@ const SignUpCustomer = () => {
                                     name="email" 
                                     placeholder="Enter Email" 
                                     required 
-                                    className={`mt-1 w-full px-4 py-3 border ${focusedField === 'email' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-200`} 
+                                    className={`mt-1 w-full px-4 py-3 border ${focusedField === 'email' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all duration-200`} 
                                     onFocus={() => handleFocus('email')}
                                     onBlur={handleBlur}
                                 />
@@ -373,7 +375,7 @@ const SignUpCustomer = () => {
                                     name="phone" 
                                     placeholder="Enter Phone-Number" 
                                     required 
-                                    className={`mt-1 w-full px-4 py-3 border ${focusedField === 'phone' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-200`} 
+                                    className={`mt-1 w-full px-4 py-3 border ${focusedField === 'phone' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all duration-200`} 
                                     onFocus={() => handleFocus('phone')}
                                     onBlur={handleBlur}
                                 />
@@ -390,7 +392,7 @@ const SignUpCustomer = () => {
                                         name="password" 
                                         placeholder="Enter Password" 
                                         required 
-                                        className={`w-full px-4 py-3 border ${focusedField === 'password' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-200`} 
+                                        className={`w-full px-4 py-3 border ${focusedField === 'password' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all duration-200`} 
                                         onFocus={() => handleFocus('password')}
                                         onBlur={handleBlur}
                                     />
@@ -416,11 +418,8 @@ const SignUpCustomer = () => {
                     </div>
                     
                     <div className="bg-gray-750 p-5 rounded-md">
-                        <h2 className="text-xl font-semibold mb-4 text-gray-300 flex items-center">
-                            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
+                        <h2 className="text-xl font-semibold mb-4 text-gray-300 flex items-center gap-2">
+                        <MapPinIcon className="w-5 h-5 text-blue-500" />
                             Address
                         </h2>
                         
@@ -435,7 +434,7 @@ const SignUpCustomer = () => {
                                     name="street" 
                                     placeholder="Enter Street Address" 
                                     required 
-                                    className={`mt-1 w-full px-4 py-3 border ${focusedField === 'street' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-200`} 
+                                    className={`mt-1 w-full px-4 py-3 border ${focusedField === 'street' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all duration-200`} 
                                     onFocus={() => handleFocus('street')}
                                     onBlur={handleBlur}
                                 />
@@ -452,7 +451,7 @@ const SignUpCustomer = () => {
                                         name="city" 
                                         placeholder="Enter City" 
                                         required 
-                                        className={`mt-1 w-full px-4 py-3 border ${focusedField === 'city' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-200`} 
+                                        className={`mt-1 w-full px-4 py-3 border ${focusedField === 'city' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all duration-200`} 
                                         onFocus={() => handleFocus('city')}
                                         onBlur={handleBlur}
                                     />
@@ -468,7 +467,7 @@ const SignUpCustomer = () => {
                                         name="state" 
                                         placeholder="Enter State" 
                                         required 
-                                        className={`mt-1 w-full px-4 py-3 border ${focusedField === 'state' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-200`} 
+                                        className={`mt-1 w-full px-4 py-3 border ${focusedField === 'state' ? 'border-gray-400' : 'border-gray-500'} text-gray-200 bg-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all duration-200`} 
                                         onFocus={() => handleFocus('state')}
                                         onBlur={handleBlur}
                                     />
@@ -479,14 +478,14 @@ const SignUpCustomer = () => {
                     
                     <button 
                         type="submit" 
-                        className={`mt-8 w-full py-3 px-4 rounded-md bg-gray-500 text-gray-200 font-medium text-lg transition-all duration-300 transform hover:bg-gray-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
+                        className={`mt-8 w-full py-3 px-4 rounded-md bg-blue-500 text-gray-200 font-medium text-lg transition-all duration-300 transform hover:bg-blue-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
                         disabled={isSubmitting}
                     >
                         {isSubmitting ? (
                             <span className="flex items-center justify-center">
                                 <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    <path className="opacity-75 " fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
                                 Creating Account...
                             </span>
@@ -495,7 +494,7 @@ const SignUpCustomer = () => {
                     
                     <div className="mt-6 text-sm text-gray-400">
                         Already have an account?{' '}
-                        <a href="/signin" className="text-gray-300 hover:text-white transition-colors duration-200">
+                        <a href="/signin" className="text-blue-500 hover:text-blue-600 transition-colors duration-200">
                             Sign in
                         </a>
                     </div>
