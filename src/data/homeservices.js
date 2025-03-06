@@ -5,6 +5,7 @@ const serviceCategories = {
       description: 'Expert in skincare, makeup, and beauty treatments',
       about:'Enhance your natural beauty with our expert beautician services, designed to make you look and feel your best. Our skilled beauticians offer a range of treatments tailored to your needs, including facials, waxing, eyebrow shaping, eyelash extensions, and professional makeup application. Whether you are preparing for a special occasion or simply indulging in some self-care, our team uses high-quality products and techniques to deliver exceptional results. Book your appointment today and experience personalized beauty treatments in a relaxing environment. Let us help you glow inside and out!',
       image:'/beutician.jpeg'
+      
     },
     { 
       name: 'Barber',
@@ -130,7 +131,8 @@ const serviceCategories = {
       name: 'InteriorDesigner',
       description: 'Creates stylish and functional interior spaces',
       about:'Transform your space into a masterpiece with our expert interior design services. Whether you are renovating your home or designing from scratch, our skilled designers work with you to create stylish, functional, and personalized interiors. From layout planning to furniture selection and color schemes, we ensure every detail enhances your space. Book your appointment today and start turning your vision into reality!',
-      image:'/interiordesigner.jpeg'
+      image:'/interiordesigner.jpeg',
+      icon:'/interiordesign.png'
     },
     { 
       name: 'EventPlanner',

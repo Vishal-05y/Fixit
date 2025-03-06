@@ -200,7 +200,13 @@ const DashboardEmployee = ({ user, bookings: initialBookings }) => {
                                         ))}
                                     </div>
                                 ) : (
-                                    <p className="text-2xl text-gray-500 text-center">No Orders</p>
+                                    <div className="flex flex-col items-center justify-center py-12 text-center">
+                                        <div className="w-20 h-20 mb-6 rounded-full bg-gray-700 flex items-center justify-center">
+                                            <CalendarIcon className="w-10 h-10 text-gray-500" />
+                                        </div>
+                                        <h3 className="text-xl font-medium text-gray-300 mb-2">No Orders Yet</h3>
+                                        <p className="text-gray-500 mb-6 max-w-md">No orders have been made by customers yet.</p>
+                                    </div>
                                 )}
                             </div>
                         </div>

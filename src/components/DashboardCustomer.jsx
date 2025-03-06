@@ -140,8 +140,8 @@ const DashboardCustomer = async () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
                             {[
                                 { label: "My Bookings", link: "/profile_cu/my-bookings" },
-                                { label: "Create One", link: "/profile_cu/def" },
-                                { label: "Create One", link: "/profile_cu/ghi" },
+                                { label: "Book Service", link: "/homeservices" },
+                                { label: "Contact", link: "/contact" },
                                 { label: "Create One", link: "/profile_cu/jkl" },
                             ].map((action, index) => (
                                 <Link key={index} href={action.link} className="group">
