@@ -46,6 +46,15 @@ const NavbarClient = ({ loggedInUser, profileLink }) => {
             ) : (
               <>
                 <li>
+                  <Link 
+                    href="/contact" 
+                    className="block text-lg md:text-xl font-medium py-2 px-3 rounded-md transition-all hover:bg-gray-700 hover:text-gray-100"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                </li>
+                <li>
                   <Link href={profileLink} className="transition-transform hover:scale-110">
                     <img src="/user.png" alt="Profile" className="h-10 w-10 rounded-full border-2 border-gray-400 bg-gray-700 object-cover shadow-md" />
                   </Link>
