@@ -125,6 +125,15 @@ const Navbar = async () => {
             <li>
               <Logout />
             </li>
+            <li>
+                <Link 
+                  href="/contact" 
+                  className="block text-lg md:text-xl font-medium py-2 px-3 rounded-md transition-all hover:bg-gray-700 hover:text-gray-100"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+            </li>
           </ul>
         </div>
       </div>
