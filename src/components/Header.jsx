@@ -65,11 +65,11 @@ const Navbar = async () => {
               </li>
               <li>
                 <Link 
-                  href="/contact" 
+                  href="/Aboutus" 
                   className="block text-lg md:text-xl font-medium py-2 px-3 rounded-md transition-all hover:bg-gray-700 hover:text-gray-100"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Contact
+                  About Us
                 </Link>
               </li>
             </ul>

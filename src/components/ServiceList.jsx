@@ -13,16 +13,17 @@ const containerVariants = {
 
 const titleVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    visible: { 
+        opacity: 1, 
+        y: 0, 
+        transition: { 
+            duration: 0.5,
+            type: "spring",
+            stiffness: 100
+        } 
+    }
 };
 
-const cardVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
-    hover: { scale: 1.05, transition: { duration: 0.2 } }
-};
-
-// Simple array of 4 images to be used in rotation
 const serviceImages = [
     "/beautyandwellness.jpg",
     "/homeservicess.jpg",
@@ -54,70 +55,66 @@ const ServiceList = () => {
                 variants={containerVariants}
             >
                 <motion.h1 
-                    className="text-3xl sm:text-4xl font-bold text-center mb-6 dark:text-gray-200 break-words"
+                    className="text-4xl sm:text-5xl font-extrabold text-center mb-10 
+                    bg-gradient-to-r from-blue-600 via-purple-500 to-indigo-400 
+                    inline-block text-transparent bg-clip-text 
+                    tracking-tight leading-tight 
+                    dark:from-blue-400 dark:via-purple-300 dark:to-indigo-200"
                     variants={titleVariants}
                 >
                     SERVICE CATEGORIES
                 </motion.h1>
 
                 <motion.div 
-                    className="grid grid-cols-1 gap-6"
+                    className="grid grid-cols-1 gap-8"
                     variants={containerVariants}
                 >
                     {[...categoryServices.keys()].map((cat, index) => {
-                        const imageIndex = index % serviceImages.length; // Ensure it cycles through the available images
-                        const isEven = index % 2 === 0; // Determine if the index is even or odd
+                        const imageIndex = index % serviceImages.length;
                         
                         return (
                             <Link key={cat} href={`/homeservices/category/services?category=${encodeURIComponent(cat)}`}>
-                                <motion.div 
-                                    className={`flex ${isEven ? 'flex-row' : 'flex-row-reverse'} w-full bg-white dark:bg-gray-700 shadow-md rounded-2xl overflow-hidden h-[400px]`} // Increased height
-                                    variants={cardVariants}
-                                    whileHover="hover"
-                                    initial="hidden"
-                                    animate="visible"
-                                    custom={index}
+                                <div 
+                                    className="relative w-full h-[600px] bg-white dark:bg-gray-700 shadow-2xl rounded-3xl overflow-hidden group"
                                 >
-                                    {/* Image Container */}
-                                    <div className="relative h-full flex-shrink-0 w-1/2">
+                                    {/* Background Image */}
+                                    <div className="absolute inset-0 z-0 group-hover:scale-110 transition-transform duration-300">
                                         <Image
                                             src={serviceImages[imageIndex]}
                                             alt={cat}
                                             fill
-                                            className="object-cover transition-transform duration-300 ease-in-out" // Use object-cover and add transition
+                                            className="object-cover"
                                             sizes="(max-width: 768px) 100vw, 50vw"
-                                            priority={index < 2} // Prioritize first two images
+                                            priority={index < 2}
                                         />
                                     </div>
                                     
-                                    {/* Content Container */}
-                                    <div className="p-6 text-center flex-grow flex flex-col w-1/2">
-                                        <motion.h2 
-                                            className="text-2xl font-semibold dark:text-gray-300 mb-2 sm:mb-4" // Increased font size
-                                            layoutId={`title-${cat}`}
-                                        >
-                                            {cat}
-                                        </motion.h2>
-                                        <motion.div 
-                                            className="flex-grow"
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            transition={{ delay: 0.2 }}
-                                        >
-                                            {categoryServices.get(cat).map((service, serviceIndex) => (
-                                                <motion.p 
-                                                    key={service.name} 
-                                                    className="dark:text-gray-400 text-lg sm:text-xl" // Increased font size
-                                                    initial={{ opacity: 0, x: -10 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ delay: 0.1 * serviceIndex }}
-                                                >
-                                                    {service.name}
-                                                </motion.p>
-                                            ))}
-                                        </motion.div>
+                                    {/* Overlay Content */}
+                                    <div className="absolute inset-0 z-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+                                        <div className="relative z-20 p-6 text-white w-full">
+                                            <h2 className="text-3xl font-bold mb-6 
+                                                bg-gradient-to-r from-white to-gray-300 
+                                                inline-block text-transparent bg-clip-text 
+                                                border-b-2 border-white/30 pb-2">
+                                                {cat}
+                                            </h2>
+                                            <div className="space-y-3">
+                                                {categoryServices.get(cat).map((service) => (
+                                                    <p 
+                                                        key={service.name} 
+                                                        className="text-lg sm:text-xl font-medium 
+                                                        opacity-80 hover:opacity-100 
+                                                        hover:translate-x-2 transition-all duration-300 
+                                                        pl-2 border-l-2 border-transparent hover:border-white"
+                                                    >
+                                                        {service.name}
+                                                    </p>
+                                                ))}
+                                            </div>
+                                        </div>
                                     </div>
-                                </motion.div>
+                                </div>
                             </Link>
                         );
                     })}

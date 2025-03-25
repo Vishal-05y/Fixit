@@ -40,7 +40,7 @@ const NavbarClient = ({ loggedInUser, profileLink }) => {
                   <Link href="/signup" className="font-medium text-xl py-2 px-3 rounded-md hover:bg-gray-700">Sign Up</Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="font-medium text-xl py-2 px-3 rounded-md hover:bg-gray-700">Contact</Link>
+                  <Link href="/contact" className="font-medium text-xl py-2 px-3 rounded-md hover:bg-gray-700">About Us</Link>
                 </li>
               </>
             ) : (
@@ -51,7 +51,7 @@ const NavbarClient = ({ loggedInUser, profileLink }) => {
                     className="block text-lg md:text-xl font-medium py-2 px-3 rounded-md transition-all hover:bg-gray-700 hover:text-gray-100"
                     onClick={() => setMenuOpen(false)}
                   >
-                    Contact
+                    About Us
                   </Link>
                 </li>
                 <li>
