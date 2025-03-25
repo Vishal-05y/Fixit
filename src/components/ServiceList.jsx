@@ -93,10 +93,10 @@ const ServiceList = () => {
                                     <div className="absolute inset-0 z-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
                                         <div className="relative z-20 p-6 text-white w-full">
-                                            <h2 className="text-3xl font-bold mb-6 
-                                                bg-gradient-to-r from-white to-gray-300 
-                                                inline-block text-transparent bg-clip-text 
-                                                border-b-2 border-white/30 pb-2">
+                                            <h2 className="text-4xl sm:text-5xl font-bold mb-6 
+                                                bg-gradient-to-r from-blue-800 via-blue-500 to-blue-300 
+                                                text-white inline-block px-4 py-2 rounded-lg 
+                                                bg-opacity-80 shadow-lg border-b-2 border-blue-400">
                                                 {cat}
                                             </h2>
                                             <div className="space-y-3">
