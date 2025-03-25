@@ -3,6 +3,7 @@ import "./globals.css";
 // import Header from "@/components/Header";
 import { dbConnect } from "@/lib/mongo";
 import Navbar from "./navbar/page";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Fixit",
@@ -18,6 +19,7 @@ export default async function RootLayout({ children }) {
       <body>
           <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

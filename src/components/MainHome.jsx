@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Footer from './Footer';
 
 export default function MainHome() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -39,12 +40,12 @@ export default function MainHome() {
         <p className="text-xl mb-8 text-gray-300">Fast, Easy, and Reliable Solutions</p>
         <div className="flex gap-6 animate-fade-in-up">
           <Link href="/homeservices" passHref>
-            <button className="px-8 py-3 bg-green-600 rounded-full hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-green-500/20">
+            <button className="px-8 py-3 bg-green-700 rounded-full hover:bg-green-800 transition-all duration-300 shadow-lg hover:shadow-green-500/20">
               Book a Service
             </button>
           </Link>
           <Link href="/signupEmployee" passHref>
-            <button className="px-8 py-3 bg-blue-600 rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/20">
+            <button className="px-8 py-3 bg-blue-500 rounded-full hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-blue-500/20">
               Become a Provider
             </button>
           </Link>
@@ -59,7 +60,7 @@ export default function MainHome() {
           <div className="grid grid-cols-3 gap-6">
             {[
               { name: 'Barber', icon: '/barber.png', link: '/homeservices/service/Barber' },
-              { name: 'Carpenter', icon: '/barber.png', link: '/homeservices/service/Carpenter' },
+              { name: 'Carpenter', icon: '/carpenter.png', link: '/homeservices/service/Carpenter' },
               { name: 'Electrician', icon: '/electrician.png', link: '/homeservices/service/Electrician' },
               { name: 'Plumber', icon: '/plumber.png', link: '/homeservices/service/Plumber' },
               { name: 'Painter', icon: '/painter.png', link: '/homeservices/service/Painter' },
@@ -154,52 +155,7 @@ export default function MainHome() {
             </Link>
           ))}
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="p-12 bg-gray-900 text-center border-t border-gray-700/50">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="flex flex-col items-center md:items-start">
-            <Image src="/engineer.png" alt="FixIt Logo" width={60} height={60} />
-            <h3 className="text-xl font-semibold text-white mt-4">FIXIT</h3>
-            <p className="text-sm text-gray-400 mt-2">India's #1 Service Booking Platform</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <Link href="/about" className="text-gray-400 hover:text-white transition-colors duration-300">
-                About Us
-              </Link>
-              <Link href="/contact" className="text-gray-400 hover:text-white transition-colors duration-300">
-                Contact Us
-              </Link>
-              <Link href="/faq" className="text-gray-400 hover:text-white transition-colors duration-300">
-                FAQs
-              </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors duration-300">
-                Terms & Policies
-              </Link>
-            </div>
-          </div>
-          <div className="flex flex-col items-center md:items-end">
-            <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-            <div className="flex gap-6">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.794.715-1.794 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116c.729 0 1.325-.597 1.325-1.324V1.325C24 .597 23.403 0 22.675 0z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <p className="text-gray-400 mt-8 text-sm">Available in major cities worldwide</p>
-      </footer>
-
+      </section>     
       <style jsx>{`
         @keyframes fade-in {
           from {
