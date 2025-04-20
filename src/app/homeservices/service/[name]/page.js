@@ -43,10 +43,10 @@ const ServiceDetailsPage = async ({ params }) => {
     ];
 
     const serviceProcess = [
-        { step: 1, title: "Book Online", description: "Select your service and choose a convenient time slot", icon: "📅" },
-        { step: 2, title: "Confirmation", description: "Receive immediate confirmation and preparation details", icon: "✅" },
-        { step: 3, title: "Service Delivery", description: "Our professional arrives and completes the service", icon: "🛠️" },
-        { step: 4, title: "Quality Check", description: "Verify your satisfaction before we consider the job done", icon: "🔍" },
+        { step: 1, title: "Schedule Service Booking", description: "Select your preferred date and time for the service", icon: "📅" },
+        { step: 2, title: "Worker Accepts Booking", description: "A qualified professional confirms your service request", icon: "👨‍🔧" },
+        { step: 3, title: "Details Shared with Worker", description: "Your service information is securely provided to the professional", icon: "🔒" },
+        { step: 4, title: "Quality Service Delivery", description: "Receive exceptional service from our verified expert", icon: "✅" },
     ];
 
     return (
@@ -121,16 +121,9 @@ const ServiceDetailsPage = async ({ params }) => {
                             <div className="flex flex-wrap justify-between items-center px-6 py-3">
                                 <div className="flex items-center space-x-6">
                                     <button className="flex items-center text-gray-300 hover:text-white transition-colors">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                        </svg>
-                                        Save
                                     </button>
                                     <button className="flex items-center text-gray-300 hover:text-white transition-colors">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                                        </svg>
-                                        Share
+
                                     </button>
                                 </div>
                                 <div>
@@ -342,4 +335,4 @@ const ServiceDetailsPage = async ({ params }) => {
     );
 };
 
-export default ServiceDetailsPage;
+export default ServiceDetailsPage; 
