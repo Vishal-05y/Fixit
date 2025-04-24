@@ -17,5 +17,6 @@ const SocialSignIn = () => {
         </div>
         </div>
     );
+    
 }
 export default SocialSignIn;
